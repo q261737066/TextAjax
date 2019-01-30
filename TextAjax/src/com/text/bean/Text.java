@@ -3,7 +3,7 @@ package com.text.bean;
 public class Text {
  private int  id;
  private String name;
- private String birthday;
+ private String sex;
  private int  age;
 /**
  * @return id
@@ -30,16 +30,16 @@ public void setName(String name) {
 	this.name = name;
 }
 /**
- * @return birthday
+ * @return sex
  */
-public String getBirthday() {
-	return birthday;
+public String getSex() {
+	return sex;
 }
 /**
- * @param birthday セットする birthday
+ * @param sex セットする sex
  */
-public void setBirthday(String birthday) {
-	this.birthday = birthday;
+public void setSex(String sex) {
+	this.sex = sex;
 }
 /**
  * @return age
@@ -58,19 +58,19 @@ public void setAge(int age) {
  */
 @Override
 public String toString() {
-	return "Text [id=" + id + ", name=" + name + ", birthday=" + birthday + ", age=" + age + "]";
+	return "Text [id=" + id + ", name=" + name + ", sex=" + sex + ", age=" + age + "]";
 }
 /**
  * @param id
  * @param name
- * @param birthday
+ * @param sex
  * @param age
  */
-public Text(int id, String name, String birthday, int age) {
+public Text(int id, String name, String sex, int age) {
 	super();
 	this.id = id;
 	this.name = name;
-	this.birthday = birthday;
+	this.sex = sex;
 	this.age = age;
 }
 /**

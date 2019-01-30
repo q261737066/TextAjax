@@ -21,17 +21,19 @@ window.onload=function(){
 	 // 3创建一个XMLHttpRequest对象
 	 var request = new XMLHttpRequest();
 	 // 4准备发送求的数据 url
-	 var url=this.href ;
+	 var url=this.href +"?time="+ new Date() ;
 	 var method="GET";
 	 //5 使用XMLHttpRequest对象的open方法
 	 request.open(method,url)
+
+
 	 //6使用XMLHttpRequest对象的send方法
 	 request.send(null)
 	 //7 为XMLHttpRequest对象添加onreadystatechange 响应函数
 	request.onreadystatechange=function(){
 	 //8判断响应是否完成   XMLHttpRequest对象的readysState属性值为4的时间候表示响应完成
 		 if(request.readyState==4){
-	 //9再判断响应是否可用:XMLhttpRequest?象的status属性为200
+	 //9再判断响应是否可用:XMLhttpRequest对象的status属性为200
 			 if(request.status==200||request.status==304){
 	 //10 打印响应结果 responseText
 			alert(request.responseText)

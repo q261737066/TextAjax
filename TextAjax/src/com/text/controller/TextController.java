@@ -1,17 +1,32 @@
 package com.text.controller;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-//@Controller
+import com.text.bean.Text;
+import com.text.dao.TextDao;
+
+
+
+@Controller
 public class TextController {
-	//@RequestMapping();
-  public String queryAll() {
+	@RequestMapping(value="/all")
+  public String queryAll(Model model) {
+		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+		TextDao tdao=(TextDao) context.getBean("textdao");
+		List<Text> textList=new ArrayList<Text>();
+		textList=tdao.queryAll();
+		model.addAttribute("texts",textList);
+		return "text";
 
-	  List<Text> textList=new ArrayList<Text>();
-	return null;
 
   }
 }
